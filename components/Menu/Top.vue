@@ -2,14 +2,14 @@
   <nav class="bg-gray-900 text-white py-5">
     <div class="container flex justify-between">
       <NuxtLink to="/" class="logo text-xl font-bold">
-        Nuxt Blog
+        Elon's Blog
       </NuxtLink>
-      <ul class="inline-flex gap-4">
+      <ul class="inline-flex gap-4 items-center">
         <li>
-          <NuxtLink to="/">首页</NuxtLink>
+          <NuxtLink to="/" class="hover:text-sky-500">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories">分类</NuxtLink>
+          <NuxtLink to="/categories" class="hover:text-sky-500">Categories</NuxtLink>
         </li>
       </ul>
     </div>
