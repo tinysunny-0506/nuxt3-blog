@@ -22,17 +22,20 @@
     <!-- Blog -->
     <section class="container py-16">
       <div class="grid sm:grid-cols-3 gap-5">
-        <BlogCard v-for="i in 9" :key="i" title="Elon Musk Title" excerpt="loremxxxx"
-          image="https://shuji.tmwcn.com/upload/avatar/20220809/a_1660060460.jpg" slug="slug" />
+        <BlogCard v-for="post in posts" :key="post.id" :title="post.title.rendered" :excerpt="post.excerpt.rendered"
+          :image="post._embedded['wp:featuredmedia'][0].source_url" :slug="post.slug" />
       </div>
     </section>
   </main>
 </template>
 
 <script lang="ts" setup>
+// https://api.jahid.dev/wp-json/wp/v2/posts
 
-const { data } = await useFetch('https://api.jahid.dev/wp-json/wp/v2/posts')
 
-console.log(data);
+const { data: posts } = await useWpApi().getPosts<any>()
+
+
+
 
 </script>
